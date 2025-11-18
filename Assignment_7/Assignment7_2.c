@@ -1,32 +1,36 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-//  File name :         Assignment5_2.c
-//  Description:        Program to print numbers till that number
+//  File name :         Assignment7_2.c
+//  Description:        Program to convert US dollar to INR conversion
 //  Author :            Swaraj Santoshrao More
-//  Date:               15/05/2025
+//  Date:               16/05/2025
 //
 ///////////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
 
-void Display(int iNo)
+int DollarToINR(int iNo)
 {
-    int iCnt = 0;
+    int INR = 0;
 
-    for(iCnt = 1; iCnt <= iNo; iCnt++)
+    if (iNo > 0)
     {
-        printf("%d\t",iCnt);
+        INR = iNo * 70;
     }
+    return INR;
 }
 
 int main()
 {
     int iValue = 0;
+    int iRet = 0;
 
     printf("Enter number : ");
     scanf("%d",&iValue);
 
-    Display(iValue);
+    iRet = DollarToINR(iValue);
+
+    printf("Value in INR is %d",iRet);
 
     return 0;
 }

@@ -1,24 +1,28 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-//  File name :         Assignment6_3.c
-//  Description:        Program to print factorial of given number
+//  File name :         Assignment7_3.c
+//  Description:        Program to find even factorial of given number
 //  Author :            Swaraj Santoshrao More
-//  Date:               15/05/2025
+//  Date:               16/05/2025
 //
 ///////////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
 
-int Factorial(int iNo)
+int EvenFactorial(int iNo)
 {
     int iCnt = 0;
     int iMult = 1;
-    
-    for(iCnt = iNo ;iCnt >= 1; iCnt--)
+    if(iNo < 0)
     {
+        iNo = -iNo;
+    }
+   for(iCnt = 1; iCnt <= iNo; iCnt++)
+    {
+        if((iCnt % 2) == 0)
         {
+            //printf("%d\n",iCnt);
             iMult = iMult * iCnt;
-            printf("%d\n",iCnt);
         }
     }
     return iMult;
@@ -31,9 +35,9 @@ int main()
     printf("Enter number:");
     scanf("%d",&iValue);
 
-    iRet = Factorial(iValue);
+    iRet = EvenFactorial(iValue);
 
-    printf("Multiplication of factors is: %d\n",iRet);
+    printf("Even factorial of number is: %d\n",iRet);
 
     return 0;
 }
